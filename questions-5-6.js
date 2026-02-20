@@ -1,7 +1,7 @@
 const QUESTIONS_5_6 = [
         {
           c: "stp",
-          q: "Quels sont les trois composants qui forment un ID de pont ?",
+          q: "Quels sont les trois composants qui sont combinés pour former un ID de pont ?",
           m: true,
           o: [
             "Coût",
@@ -16,7 +16,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quels sont les deux états de port dans lesquels un commutateur apprend les adresses MAC dans PVST ?",
+          q: "Quels sont les deux états de port dans lesquels un commutateur apprend les adresses MAC et traite les trames BPDU sur un réseau PVST ? (Choisissez deux réponses.)",
           m: true,
           o: [
             "blocage",
@@ -30,7 +30,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Si aucune priorité de pont n'est configurée dans PVST, quel critère détermine le pont racine ?",
+          q: "Si aucune priorité de pont n’est configurée dans le protocole PVST, quels critères sont pris en considération lors de la sélection du pont racine ?",
           m: false,
           o: [
             "adresse IP la plus élevée",
@@ -43,7 +43,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quelles deux fonctionnalités réseau nécessitent STP pour fonctionner correctement ?",
+          q: "Quelles sont les deux fonctionnalités de conception de réseau qui nécessitent le protocole STP (Spanning Tree Protocol) pour assurer un fonctionnement correct du réseau ? (Choisissez deux réponses.)",
           m: true,
           o: [
             "routes par défaut statiques",
@@ -57,7 +57,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel est le résultat d'une tempête de diffusion de couche 2 ?",
+          q: "Quel est le résultat d’une tempête de diffusion de couche 2 ?",
           m: false,
           o: [
             "CSMA/CD amène chaque hôte à transmettre des trames.",
@@ -70,7 +70,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Associez le protocole STP à la description correcte. (voir illustration)",
+          q: "Associez le protocole STP à la description correcte. (Les options ne doivent pas être toutes utilisées.)",
           m: false,
           i: "2022-06-27_120527.jpg",
           o: [
@@ -84,7 +84,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Associez la fonctionnalité Spanning Tree au type de protocole. (voir illustration)",
+          q: "Associez la fonctionnalité Spanning Tree au type de protocole. (Les options ne sont pas toutes utilisées.)",
           m: false,
           i: "2022-06-27_120742.jpg",
           o: [
@@ -98,7 +98,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quels deux rôles peuvent avoir des ports en état de transmission (show spanning-tree vlan 33) ?",
+          q: "Lorsque la commande show spanning-tree vlan 33 est exécutée sur un commutateur, trois ports apparaissent en état de transmission. Quels sont les deux rôles de port dans lesquels ces interfaces peuvent fonctionner à partir de l’état de transmission ? (Choisissez deux réponses.)",
           m: true,
           o: ["alternatif", "désactivé", "bloqué", "désigné", "racine"],
           a: [3, 4],
@@ -106,7 +106,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quelle valeur de priorité de pont STP réduit la probabilité d'être sélectionné comme pont racine ?",
+          q: "Un ensemble de commutateurs est connecté au sein d’une topologie LAN. Quelle valeur de priorité de pont STP réduit la probabilité que le commutateur soit sélectionné en tant que racine ?",
           m: false,
           o: ["61440", "4096", "32768", "65535"],
           a: [0],
@@ -127,7 +127,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "À quoi sert le protocole STP ?",
+          q: "À quoi sert le protocole STP (Spanning Tree Protocol) ?",
           m: false,
           o: [
             "À empêcher les boucles de couche 2",
@@ -141,7 +141,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quels sont les deux états de ports PVST+ permettant l'apprentissage des adresses MAC ?",
+          q: "Quels sont les deux états de ports PVST+ permettant l’apprentissage des adresses MAC ? Citez-en deux.",
           m: true,
           o: [
             "Transmission",
@@ -155,7 +155,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel commutateur sera le pont racine au terme du processus de sélection ? (voir illustration)",
+          q: "Reportez-vous à l’illustration. Quel commutateur sera le pont racine au terme du processus de sélection ?",
           m: false,
           i: "2022-06-27_121112.jpg",
           o: ["S1", "S2", "S3", "S4"],
@@ -164,7 +164,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quels sont les deux inconvénients de la désactivation de Spanning Tree sur un réseau commuté de couche 2 ?",
+          q: "Quels sont les deux inconvénients que présentent la désactivation de Spanning Tree et l’utilisation de plusieurs chemins sur le réseau commuté de couche 2 ? (Choisissez deux propositions.)",
           m: true,
           o: [
             "Le système de sécurité des ports arrête tous les ports reliés.",
@@ -178,7 +178,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Parmi les affirmations sur PAgP pour créer des EtherChannels, laquelle est correcte ?",
+          q: "Parmi les affirmations concernant l’utilisation du protocole PAgP pour créer des EtherChannels, laquelle est correcte ?",
           m: false,
           o: [
             "Il requiert davantage de liaisons physiques que LACP.",
@@ -192,7 +192,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Citez deux conditions requises pour configurer un EtherChannel entre deux commutateurs.",
+          q: "Citez deux conditions requises pour pouvoir configurer un EtherChannel entre deux commutateurs ? (Choisissez deux réponses.)",
           m: true,
           o: [
             "Toutes les interfaces doivent fonctionner dans le même mode bidirectionnel.",
@@ -206,7 +206,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "D'après le résultat affiché, quelle conclusion tirez-vous de la liaison EtherChannel ? (voir illustration)",
+          q: "Examinez l’illustration. D’après le résultat affiché, quelles conclusions pouvez-vous tirer à propos de la liaison EtherChannel ?",
           m: false,
           i: "2022-06-27_121214.jpg",
           o: [
@@ -220,7 +220,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quels deux paramètres doivent correspondre sur les ports des deux commutateurs pour créer une liaison PAgP EtherChannel ?",
+          q: "Quels sont les deux paramètres devant correspondre sur les ports des deux commutateurs afin de créer une liaison PAgP EtherChannel entre les commutateurs ? (Choisissez deux réponses.)",
           m: true,
           o: [
             "vitesse",
@@ -234,7 +234,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Un EtherChannel entre S1 et S2 ne se forme pas. Quel est le problème ? (voir illustration)",
+          q: "Examinez l’illustration. Un EtherChannel a été configuré entre les commutateurs S1 et S2, mais les interfaces ne forment pas d’EtherChannel. Quel est le problème ?",
           m: false,
           i: "2022-06-27_121308.jpg",
           o: [
@@ -248,7 +248,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel paramètre de configuration autorise un EtherChannel sans envoyer de trafic de négociation ?",
+          q: "Quel paramètre de configuration de mode autorise la formation d’une liaison EtherChannel entre les commutateurs SW1 et SW2 sans envoyer de trafic de négociation ?",
           m: false,
           o: [
             "SW1: auto / SW2: auto + PortFast activé",
@@ -262,7 +262,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Citez deux modes de groupe de canaux plaçant une interface en état de négociation PAgP.",
+          q: "Citez deux modes de groupe de canaux plaçant une interface en état de négociation au moyen du protocole PAgP ? (Choisissez deux réponses.)",
           m: true,
           o: ["active", "passive", "auto", "on", "desirable"],
           a: [2, 4],
@@ -270,7 +270,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Si l'une des liaisons trunk d'un EtherChannel à 4 liaisons passe à 'down', qu'advient-il ?",
+          q: "Un administrateur réseau a configuré une liaison EtherChannel entre deux commutateurs par le biais de quatre liaisons trunk. Si l’interface physique pour l’une des liaisons trunk passe à l’état « down », qu’advient-il de l’EtherChannel ?",
           m: false,
           o: [
             "L'EtherChannel passera à l'état 'down'.",
@@ -283,7 +283,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel est l'effet des commandes sur SW1 et SW2 ? (voir illustration)",
+          q: "Reportez-vous à l’illustration. Un administrateur réseau est en train de configurer une liaison EtherChannel entre deux commutateurs, SW1 et SW2. Quelle instruction décrit l’effet après l’émission des commandes sur SW1 et SW2?",
           m: false,
           i: "2022-06-27_121413.jpg",
           o: [
@@ -297,7 +297,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel changement de configuration corrigerait le problème EtherChannel entre SW1 et SW2 ? (voir illustration)",
+          q: "Reportez-vous à l’illustration. Un administrateur réseau est en train de configurer une liaison EtherChannel entre deux commutateurs, SW1 et SW2. Toutefois, la liaison EtherChannel ne parvient pas à établir. Quel changement de configuration corrigerait le problème?",
           m: false,
           i: "2022-06-27_121516.jpg",
           o: [
@@ -311,7 +311,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Que se passe-t-il si l'une des trois interfaces d'un EtherChannel tombe en panne ?",
+          q: "Un administrateur réseau a configuré une liaison EtherChannel avec trois interfaces entre deux commutateurs. Que se passe-t-il si l’une des trois interfaces tombe en panne ?",
           m: false,
           o: [
             "L'une des interfaces devient active, l'autre devient de secours.",
@@ -324,7 +324,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quelle est l'une des conditions requises pour configurer un trunk EtherChannel ?",
+          q: "Quelle est l’une des conditions requises pour configurer un trunk EtherChannel entre deux commutateurs ?",
           m: false,
           o: [
             "Les interfaces doivent être sur le même module sur un commutateur.",
@@ -337,7 +337,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quelle est la description correcte d'une implémentation EtherChannel ?",
+          q: "Quelle est la description correcte d’une implémentation EtherChannel ?",
           m: false,
           o: [
             "PAgP ne peut pas être utilisé en même temps qu'EtherChannel.",
@@ -350,7 +350,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel terme décrit un champ STP utilisé pour spécifier un ID VLAN ?",
+          q: "Un commutateur est configuré pour exécuter STP. Quel terme décrit un champ utilisé pour spécifier un ID VLAN?",
           m: false,
           o: [
             "ID de pont",
@@ -363,7 +363,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quels sont les rôles possibles pour les ports A, B, C et D dans ce réseau RSTP ? (voir illustration)",
+          q: "Reportez-vous à l’illustration. Quels sont les rôles possibles pour les ports A, B, C et D dans ce réseau RSTP ?",
           m: false,
           i: "2022-06-27_121604.jpg",
           o: [
@@ -377,7 +377,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quelle technologie autorise l'agrégation de liaisons entre commutateurs de couche 2 et 3 ? (voir illustration)",
+          q: "Examinez l’illustration. Quelle technologie de commutation autorise l’agrégation de chaque liaison de commutateur de couche d’accès afin de fournir davantage de bande passante entre chaque commutateur de couche 2 et le commutateur de couche 3 ?",
           m: false,
           i: "2022-06-27_121646.jpg",
           o: ["Trunking", "HSRP", "EtherChannel", "PortFast"],
@@ -386,7 +386,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Si S1 est en mode automatique PAgP, quel mode doit être configuré sur S2 ? (voir illustration)",
+          q: "Examinez l’illustration. Un administrateur souhaite établir un EtherChannel entre les deux commutateurs en utilisant le protocole PAgP (Port Aggregation Protocol) . Si le commutateur S1 est configuré pour être en mode automatique, quel mode doit être configuré sur S2 pour établir l’EtherChannel ?",
           m: false,
           i: "2022-06-27_121749.jpg",
           o: ["off", "auto", "on", "desirable"],
@@ -395,7 +395,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel ensemble de commandes sur SW1 complètera avec succès la liaison EtherChannel ? (voir illustration)",
+          q: "Ouvrez le fichier d’activité Packet Tracer. Effectuez les tâches dans les instructions relatives et puis répondez à la question. Quel ensemble de commandes de configuration émises sur le SW1 permettra de compléter avec succès la liaison EtherChannel entre le SW1 et le SW2 ?",
           m: false,
           i: "2022-06-27_114700.jpg",
           o: [
@@ -409,7 +409,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quelle est l'une des caractéristiques du protocole Spanning Tree ?",
+          q: "Quelle est l’une des caractéristiques du protocole Spanning Tree ?",
           m: false,
           o: [
             "Il empêche la propagation des trames de diffusion de couche 2.",
@@ -422,7 +422,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel protocole fournit jusqu'à 16 instances de RSTP combinant des VLAN avec la même topologie ?",
+          q: "Quel protocole fournit jusqu’à 16 instances de RSTP, combine de nombreux VLAN avec la même topologie physique et logique en une instance RSTP commune, et fournit une prise en charge de PortFast, une protection BPDU, un filtre BPDU, une protection de racine et une protection de boucle ?",
           m: false,
           o: ["STP", "PVST+", "Rapid PVST+", "MST"],
           a: [3],
@@ -430,7 +430,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quelle valeur est utilisée pour déterminer le port racine d'un pont non racine dans STP ?",
+          q: "Quelle valeur est utilisée pour déterminer le port d’un pont non racine qui deviendra un port racine dans un réseau STP ?",
           m: false,
           o: [
             "Le coût du chemin",
@@ -443,7 +443,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel rôle de port présente le coût le plus faible pour accéder au pont racine ?",
+          q: "Quel rôle de port affecté au port de commutation présente le coût le plus faible pour accéder au pont racine ?",
           m: false,
           o: [
             "port racine",
@@ -456,7 +456,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quelle valeur de priorité de pont permet à un commutateur de devenir le pont racine ? (valeur par défaut = 32768)",
+          q: "Le réseau d’une petite entreprise compte six commutateurs de couche 2 interconnectés. Actuellement tous les commutateurs utilisent la valeur de priorité de pont par défaut. Quelle valeur permet de configurer la priorité de pont de l’un des commutateurs de sorte qu’il devienne le pont racine dans cette conception ?",
           m: false,
           o: ["1", "28672", "32768", "34816", "61440"],
           a: [1],
@@ -464,7 +464,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Pourquoi l'administrateur échoue-t-il à créer un EtherChannel entre S1 et les deux autres commutateurs ? (voir illustration)",
+          q: "Examinez l’illustration. L’administrateur a essayé de créer un EtherChannel entre S1 et les deux autres commutateurs par le biais des commandes illustrées, mais sans succès. Quel est le problème ?",
           m: false,
           i: "2022-06-27_163320.jpg",
           o: [
@@ -478,7 +478,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel mode permet de forcer une interface vers un canal de port sans échange de paquets de protocole d'agrégation ?",
+          q: "Lorsqu’EtherChannel est configuré, quel mode permet de forcer une interface vers un canal de port sans échange de paquets de protocole d’agrégation ?",
           m: false,
           o: ["desirable", "active", "on", "auto"],
           a: [2],
@@ -486,7 +486,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quelle est la description correcte d'une caractéristique d'EtherChannel ?",
+          q: "Quelle est la description correcte d’une caractéristique d’EtherChannel ?",
           m: false,
           o: [
             "Résultat de la combinaison de plusieurs liaisons physiques en une seule liaison logique entre deux commutateurs.",
@@ -499,7 +499,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "SW1 utilise 'channel-group 1 mode passive'. Quelle commande activer sur SW2 ?",
+          q: "Un administrateur réseau configure une liaison EtherChannel entre les commutateurs SW1 et SW2 à l’aide de la commande SW1(config-if-range)# channel-group 1 mode passive . Quelle commande doit être utilisée sur SW2 pour activer cet EtherChannel ?",
           m: false,
           o: [
             "channel-group 1 mode on",
@@ -512,7 +512,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quelle technologie correspond à une norme de protocole ouvert permettant le regroupement automatique de ports physiques ?",
+          q: "Quelle technologie correspond à une norme de protocole ouvert permettant le regroupement automatique de ports physiques sous forme d’une liaison logique unique ?",
           m: false,
           o: ["Protocole PPP multiliaison", "DTP", "PAgP", "LACP"],
           a: [3],
@@ -520,7 +520,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quelle conclusion tirer de show etherchannel summary sur S1 ? (voir illustration)",
+          q: "Reportez-vous à l’illustration. Un administrateur réseau a exécuté la commande show etherchannel summary sur le commutateur S1. Quelle conclusion pouvez-vous tirer ?",
           m: false,
           i: "2022-06-27_163438.jpg",
           o: [
@@ -534,7 +534,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quels sont les deux avantages de l'utilisation de LACP ?",
+          q: "Quels sont les deux avantages de l’utilisation de LACP? (Choisissez deux propositions.)",
           m: true,
           o: [
             "Il élimine la nécessité de configurer les interfaces de jonction lors du déploiement de VLAN.",
@@ -549,7 +549,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quels sont deux avantages de l'EtherChannel ?",
+          q: "Quels sont deux avantages de l’EtherChannel ? (Choisissez deux réponses.)",
           m: true,
           o: [
             "La configuration de l'interface EtherChannel assure une cohérence lors de la configuration des liaisons physiques.",
@@ -563,7 +563,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel terme décrit le champ STP dont la valeur par défaut est 32 768, facteur déterminant initial de l'élection du pont racine ?",
+          q: "Un commutateur est configuré pour exécuter STP. Quel terme décrit un champ dont la valeur par défaut est 32 768 et est le facteur déterminant initial lors de l’élection d’un pont racine?",
           m: false,
           o: ["Priorité du pont", "BPDUs", "ID de pont", "ID système étendu"],
           a: [0],
@@ -571,7 +571,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Citez deux méthodes d'équilibrage de la charge dans EtherChannel.",
+          q: "Citez deux méthodes d’équilibrage de la charge dans la technologie EtherChannel. (Choisissez deux réponses.)",
           m: true,
           o: [
             "La combinaison du port et d'une adresse IP source/destination",
@@ -585,7 +585,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel terme décrit le point de référence pour tous les calculs de chemin STP ?",
+          q: "Un commutateur est configuré pour exécuter STP. Quel terme décrit le point de référence pour tous les calculs de chemin?",
           m: false,
           o: ["pont racine", "désactivé", "port désigné", "port racine"],
           a: [0],
@@ -593,7 +593,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel standard Spanning Tree prend uniquement en charge un pont racine pour tous les VLAN ?",
+          q: "Quel standard Spanning Tree prend uniquement en charge un pont racine de sorte que le trafic de tous les VLAN passe par le même chemin ?",
           m: false,
           o: ["MST", "802.1D", "Rapid PVST", "PVST+"],
           a: [1],
@@ -601,7 +601,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel terme décrit un port non racine autorisé à transférer le trafic sur le réseau ?",
+          q: "Un commutateur est configuré pour exécuter STP. Quel terme décrit un port non racine autorisé à transférer le trafic sur le réseau?",
           m: false,
           o: ["port désigné", "port racine", "désactivé", "port alternatif"],
           a: [0],
@@ -609,7 +609,7 @@ const QUESTIONS_5_6 = [
         },
         {
           c: "stp",
-          q: "Quel terme décrit le port de commutateur le plus proche (coût global) du pont racine ?",
+          q: "Un commutateur est configuré pour exécuter STP. Quel terme décrit le port de commutateur le plus proche, en termes de coût global, du pont racine?",
           m: false,
           o: ["port alternatif", "désactivé", "port racine", "port désigné"],
           a: [2],
