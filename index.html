@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz CCNA2 – Modules 5-6 & 7-9</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div style="display: flex; align-items: center">
+        <div class="logo">CCNA2</div>
+        <div class="hdiv"></div>
+        <div class="htitle">Quiz Checkpoint SRWE v7.0</div>
+      </div>
+      <div class="hscore" id="hscore">Score : 0</div>
+    </div>
+    <div class="pbar">
+      <div class="pfill" id="pfill" style="width: 0%"></div>
+    </div>
+    <div class="wrap">
+      <div id="ss">
+        <div class="badge"><span>●</span> Examen Checkpoint</div>
+        <h1>Quiz <span>CCNA 2</span><br />Modules 5 – 9</h1>
+        <p class="hsub">
+          108 questions issues des examens checkpoint officiels.<br />Les
+          réponses correctes correspondent aux réponses en rouge du site.
+        </p>
+        <div class="mgrid">
+          <div class="mc">
+            <div class="micon">🔄</div>
+            <h3>Modules 5–6</h3>
+            <p>Réseaux Redondants — STP, PVST+, EtherChannel, PAgP, LACP</p>
+            <span class="cnt">51 questions</span>
+          </div>
+          <div class="mc">
+            <div class="micon">🌐</div>
+            <h3>Modules 7–9</h3>
+            <p>
+              Réseaux Disponibles & Fiables — DHCP, DHCPv6, SLAAC, HSRP, GLBP,
+              VRRP
+            </p>
+            <span class="cnt">57 questions</span>
+          </div>
+        </div>
+        <div class="frow">
+          <button class="fb active" onclick="setF('all', this)">
+            Tous les modules
+          </button>
+          <button class="fb" onclick="setF('stp', this)">
+            Modules 5–6 seulement
+          </button>
+          <button class="fb" onclick="setF('dhcp', this)">
+            Modules 7–9 seulement
+          </button>
+        </div>
+        <button class="sbtn" onclick="startQ()">Démarrer le quiz →</button>
+      </div>
+
+      <div id="qa">
+        <div class="qhdr">
+          <span class="qctr" id="qctr">1 / 108</span>
+          <span class="qslive" id="qsl">0 pts</span>
+        </div>
+        <div id="qb"></div>
+        <div class="qact">
+          <button class="btn bchk" id="bchk" onclick="check()" disabled>
+            Valider
+          </button>
+          <button class="btn bnxt" id="bnxt" onclick="next()">Suivant →</button>
+        </div>
+      </div>
+
+      <div id="ra">
+        <div class="ring">
+          <svg width="160" height="160">
+            <circle
+              cx="80"
+              cy="80"
+              r="66"
+              fill="none"
+              stroke="#1c2333"
+              stroke-width="12"
+            />
+            <circle
+              cx="80"
+              cy="80"
+              r="66"
+              fill="none"
+              stroke="#58a6ff"
+              stroke-width="12"
+              stroke-dasharray="414.7"
+              id="sarc"
+              stroke-dashoffset="414.7"
+              stroke-linecap="round"
+              style="transition: stroke-dashoffset 1.2s ease"
+            />
+          </svg>
+          <div class="ri">
+            <div class="rpct" id="rpct">0%</div>
+            <div class="rlbl">score</div>
+          </div>
+        </div>
+        <div class="remo" id="remo">🎯</div>
+        <div class="rtitle" id="rtitle">Résultat</div>
+        <div class="rsub" id="rsub">—</div>
+        <div class="sgrid">
+          <div class="sc">
+            <div class="sn" style="color: var(--green)" id="sc">0</div>
+            <div class="sk">Correctes</div>
+          </div>
+          <div class="sc">
+            <div class="sn" style="color: var(--red)" id="sw">0</div>
+            <div class="sk">Incorrectes</div>
+          </div>
+          <div class="sc">
+            <div class="sn" style="color: var(--accent)" id="st">0</div>
+            <div class="sk">Total</div>
+          </div>
+        </div>
+        <div class="ract">
+          <button class="brs" onclick="startQ()">↺ Recommencer</button>
+          <button class="bmn" onclick="goMenu()">← Menu</button>
+        </div>
+      </div>
+    </div>
+    <script src="./questions-5-6.js"></script>
+    <script src="./questions-7-9.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
