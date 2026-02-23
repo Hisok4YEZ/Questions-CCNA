@@ -1,5 +1,8 @@
 const IMAGE_BASE_URL = "https://ccnareponses.com/wp-content/uploads/2022/06/";
-const ALL_QUESTIONS = [...QUESTIONS_5_6, ...QUESTIONS_7_9];
+const ALL_QUESTIONS = [...QUESTIONS_5_6, ...QUESTIONS_7_9].map((q, i) => ({
+  ...q,
+  id: i + 1,
+}));
 
 let quiz = [];
 let idx = 0;
@@ -7,32 +10,107 @@ let score = 0;
 let sel = [];
 let done = false;
 let filt = "all";
+let qCountLimit = null;
+let roundNumber = 1;
+let failedQuestions = [];
+
+function getFilteredPool() {
+  if (filt === "stp") return ALL_QUESTIONS.filter((q) => q.c === "stp");
+  if (filt === "dhcp") return ALL_QUESTIONS.filter((q) => q.c === "dhcp");
+  return ALL_QUESTIONS;
+}
 
 function setF(f, el) {
   filt = f;
   document.querySelectorAll(".fb").forEach((b) => b.classList.remove("active"));
   el.classList.add("active");
+  updateQCountMeta();
 }
 
 function shuffle(a) {
-  return a.sort(() => Math.random() - 0.5);
+  const copy = [...a];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
 }
 
-function startQ() {
-  quiz = shuffle(
-    filt === "all"
-      ? [...ALL_QUESTIONS]
-      : filt === "stp"
-        ? ALL_QUESTIONS.filter((q) => q.c === "stp")
-        : ALL_QUESTIONS.filter((q) => q.c === "dhcp"),
-  );
+function getTargetCount(poolSize) {
+  if (poolSize <= 0) return 0;
+  if (qCountLimit === null) return poolSize;
+  return Math.max(1, Math.min(Math.trunc(qCountLimit), poolSize));
+}
+
+function toggleQCountPanel() {
+  const panel = document.getElementById("qcountPanel");
+  panel.style.display = panel.style.display === "block" ? "none" : "block";
+}
+
+function setQCountPreset(value, el) {
+  document.querySelectorAll(".qp").forEach((b) => b.classList.remove("active"));
+  el.classList.add("active");
+  if (value === "all") {
+    qCountLimit = null;
+    document.getElementById("qcountInput").value = "";
+  } else {
+    qCountLimit = Number(value);
+    document.getElementById("qcountInput").value = value;
+  }
+  updateQCountMeta();
+}
+
+function setQCountCustom(value) {
+  const allPreset = document.querySelector(".qp");
+  document.querySelectorAll(".qp").forEach((b) => b.classList.remove("active"));
+  if (value.trim() === "") {
+    qCountLimit = null;
+    if (allPreset) allPreset.classList.add("active");
+  } else {
+    const customCount = Number.parseInt(value, 10);
+    qCountLimit = Number.isNaN(customCount) || customCount < 1 ? 1 : customCount;
+  }
+  updateQCountMeta();
+}
+
+function updateQCountMeta() {
+  const max = getFilteredPool().length;
+  const meta = document.getElementById("qcountMeta");
+  if (!meta) return;
+  if (qCountLimit === null) {
+    meta.textContent = `Questionnaire complet (${max} questions disponibles)`;
+    return;
+  }
+  const used = getTargetCount(max);
+  const plural = used > 1 ? "s" : "";
+  meta.textContent =
+    used < max
+      ? `${used} question${plural} seront tirées au hasard`
+      : `${used} question${plural} (maximum disponible pour ce filtre)`;
+}
+
+function startRound(questions, retryOnly = false) {
+  if (!questions.length) return;
+  if (retryOnly) roundNumber += 1;
+  else roundNumber = 1;
+  quiz = shuffle(questions);
   idx = 0;
   score = 0;
+  sel = [];
+  done = false;
+  failedQuestions = [];
   document.getElementById("ss").style.display = "none";
   document.getElementById("ra").style.display = "none";
   document.getElementById("qa").style.display = "block";
   document.getElementById("hscore").style.display = "block";
   render();
+}
+
+function startQ() {
+  const pool = getFilteredPool();
+  const targetCount = getTargetCount(pool.length);
+  const selected = shuffle(pool).slice(0, targetCount);
+  startRound(selected, false);
 }
 
 function render() {
@@ -41,7 +119,8 @@ function render() {
   const q = quiz[idx];
   const n = quiz.length;
   const letters = "ABCDEFGH";
-  document.getElementById("qctr").textContent = `${idx + 1} / ${n}`;
+  document.getElementById("qctr").textContent =
+    `Manche ${roundNumber} • ${idx + 1} / ${n}`;
   document.getElementById("qsl").textContent = `${score} pts`;
   document.getElementById("hscore").textContent = `Score : ${score}/${idx}`;
   document.getElementById("pfill").style.width = `${(idx / n) * 100}%`;
@@ -103,6 +182,7 @@ function check() {
   const ok =
     JSON.stringify(q.a.slice().sort()) === JSON.stringify(sel.slice().sort());
   if (ok) score++;
+  else failedQuestions.push(q);
   document.querySelectorAll(".opt").forEach((el, i) => {
     el.classList.add("dis");
     el.classList.remove("sel");
@@ -129,7 +209,7 @@ function showR() {
   document.getElementById("ra").style.display = "block";
   document.getElementById("pfill").style.width = "100%";
   const n = quiz.length;
-  const p = Math.round((score / n) * 100);
+  const p = n ? Math.round((score / n) * 100) : 0;
   const w = n - score;
   document.getElementById("rpct").textContent = `${p}%`;
   document.getElementById("sc").textContent = score;
@@ -163,9 +243,25 @@ function showR() {
     t = "À retravailler";
     s = "Pas de panique, relis bien tes modules et retente le quiz.";
   }
+  const retryBtn = document.getElementById("brw");
+  if (failedQuestions.length > 0) {
+    const plural = failedQuestions.length > 1 ? "s" : "";
+    retryBtn.textContent = `Refaire les ${failedQuestions.length} question${plural} ratée${plural}`;
+    retryBtn.style.display = "inline-block";
+  } else {
+    retryBtn.style.display = "none";
+  }
   document.getElementById("remo").textContent = e;
-  document.getElementById("rtitle").textContent = t;
-  document.getElementById("rsub").textContent = s;
+  document.getElementById("rtitle").textContent = `${t} (manche ${roundNumber})`;
+  document.getElementById("rsub").textContent =
+    failedQuestions.length > 0
+      ? `${s} ${failedQuestions.length} question${failedQuestions.length > 1 ? "s" : ""} à retravailler.`
+      : s;
+}
+
+function retryWrong() {
+  if (failedQuestions.length === 0) return;
+  startRound(failedQuestions, true);
 }
 
 function goMenu() {
@@ -173,5 +269,8 @@ function goMenu() {
   document.getElementById("qa").style.display = "none";
   document.getElementById("ss").style.display = "block";
   document.getElementById("hscore").style.display = "none";
+  document.getElementById("brw").style.display = "none";
   document.getElementById("pfill").style.width = "0%";
 }
+
+updateQCountMeta();

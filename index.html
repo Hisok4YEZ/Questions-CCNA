@@ -54,6 +54,31 @@
             Modules 7–9 seulement
           </button>
         </div>
+        <button class="cbtn" onclick="toggleQCountPanel()">
+          🎯 Choisir le nombre de questions
+        </button>
+        <div class="qcount" id="qcountPanel">
+          <div class="qpresets">
+            <button class="qp active" onclick="setQCountPreset('all', this)">
+              Toutes
+            </button>
+            <button class="qp" onclick="setQCountPreset(15, this)">15</button>
+            <button class="qp" onclick="setQCountPreset(20, this)">20</button>
+            <button class="qp" onclick="setQCountPreset(25, this)">25</button>
+          </div>
+          <div class="qcustom">
+            <label for="qcountInput">Nombre libre</label>
+            <input
+              id="qcountInput"
+              type="number"
+              min="1"
+              step="1"
+              placeholder="Ex: 30"
+              oninput="setQCountCustom(this.value)"
+            />
+          </div>
+          <div class="qmeta" id="qcountMeta">Questionnaire complet</div>
+        </div>
         <button class="sbtn" onclick="startQ()">Démarrer le quiz →</button>
       </div>
 
@@ -119,6 +144,9 @@
           </div>
         </div>
         <div class="ract">
+          <button class="brw" id="brw" onclick="retryWrong()" style="display: none">
+            Refaire les questions ratées
+          </button>
           <button class="brs" onclick="startQ()">↺ Recommencer</button>
           <button class="bmn" onclick="goMenu()">← Menu</button>
         </div>
