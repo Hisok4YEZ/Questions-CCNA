@@ -309,6 +309,21 @@
         color: var(--green);
         border: 1px solid rgba(63, 185, 80, 0.25);
       }
+      .tv {
+        background: rgba(248, 81, 73, 0.1);
+        color: #f85149;
+        border: 1px solid rgba(248, 81, 73, 0.25);
+      }
+      .tw {
+        background: rgba(163, 113, 247, 0.12);
+        color: #a371f7;
+        border: 1px solid rgba(163, 113, 247, 0.3);
+      }
+      .tr {
+        background: rgba(210, 153, 34, 0.12);
+        color: var(--orange);
+        border: 1px solid rgba(210, 153, 34, 0.3);
+      }
       .qhint {
         font-family: "JetBrains Mono", monospace;
         font-size: 11px;
@@ -418,7 +433,17 @@
         display: flex;
         gap: 10px;
         margin-top: 20px;
-        justify-content: flex-end;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .bback {
+        background: transparent;
+        color: var(--muted);
+        border: 1px solid var(--border);
+      }
+      .bback:hover {
+        border-color: var(--muted);
+        color: var(--text);
       }
       .btn {
         font-family: "DM Sans", sans-serif;

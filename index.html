@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz CCNA2 – Modules 5-6 & 7-9</title>
+    <title>Quiz CCNA2 – Modules 1-4, 5-6, 7-9, 10-13 & 14-16</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -21,12 +21,18 @@
     <div class="wrap">
       <div id="ss">
         <div class="badge"><span>●</span> Examen Checkpoint</div>
-        <h1>Quiz <span>CCNA 2</span><br />Modules 5 – 9</h1>
+        <h1>Quiz <span>CCNA 2</span><br />Modules 1 – 16</h1>
         <p class="hsub">
-          108 questions issues des examens checkpoint officiels.<br />Les
+          Questions issues des examens checkpoint officiels.<br />Les
           réponses correctes correspondent aux réponses en rouge du site.
         </p>
         <div class="mgrid">
+          <div class="mc">
+            <div class="micon">🔀</div>
+            <h3>Modules 1–4</h3>
+            <p>Commutation, VLAN & Routage Inter-VLAN — Router-on-a-Stick, SVI, DTP</p>
+            <span class="cnt">64 questions</span>
+          </div>
           <div class="mc">
             <div class="micon">🔄</div>
             <h3>Modules 5–6</h3>
@@ -42,16 +48,37 @@
             </p>
             <span class="cnt">57 questions</span>
           </div>
+          <div class="mc">
+            <div class="micon">🛡️</div>
+            <h3>Modules 10–13</h3>
+            <p>Sécurité couche 2 & WLAN — Port Security, DHCP Snooping, 802.1X, Wi-Fi</p>
+            <span class="cnt">71 questions</span>
+          </div>
+          <div class="mc">
+            <div class="micon">🗺️</div>
+            <h3>Modules 14–16</h3>
+            <p>Concepts de Routage — Routes statiques, IPv6, Distance administrative, Floating routes</p>
+            <span class="cnt">56 questions</span>
+          </div>
         </div>
         <div class="frow">
           <button class="fb active" onclick="setF('all', this)">
             Tous les modules
           </button>
+          <button class="fb" onclick="setF('vlan', this)">
+            Modules 1–4
+          </button>
           <button class="fb" onclick="setF('stp', this)">
-            Modules 5–6 seulement
+            Modules 5–6
           </button>
           <button class="fb" onclick="setF('dhcp', this)">
-            Modules 7–9 seulement
+            Modules 7–9
+          </button>
+          <button class="fb" onclick="setF('wlan', this)">
+            Modules 10–13
+          </button>
+          <button class="fb" onclick="setF('routing', this)">
+            Modules 14–16
           </button>
         </div>
         <button class="cbtn" onclick="toggleQCountPanel()">
@@ -84,11 +111,12 @@
 
       <div id="qa">
         <div class="qhdr">
-          <span class="qctr" id="qctr">1 / 108</span>
+          <span class="qctr" id="qctr">1 / 1</span>
           <span class="qslive" id="qsl">0 pts</span>
         </div>
         <div id="qb"></div>
         <div class="qact">
+          <button class="btn bback" id="bback" onclick="goMenu()">← Menu</button>
           <button class="btn bchk" id="bchk" onclick="check()" disabled>
             Valider
           </button>
@@ -152,8 +180,11 @@
         </div>
       </div>
     </div>
+    <script src="./questions-1-4.js"></script>
     <script src="./questions-5-6.js"></script>
     <script src="./questions-7-9.js"></script>
+    <script src="./questions-10-13.js"></script>
+    <script src="./questions-14-16.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
